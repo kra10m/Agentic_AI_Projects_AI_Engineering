@@ -1,0 +1,13 @@
+# Environment & Secrets
+.env
+*.env
+
+# Python & Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Conda / Virtualenvs
+.venv/
+env/
+venv/
