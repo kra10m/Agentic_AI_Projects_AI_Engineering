@@ -1,0 +1,8 @@
+Section 1: Microservices Architecture
+Microservices break a large monolithic application into small, loosely coupled services. Each service handles a single business capability, such as authentication, payment processing, or order management. Services communicate over lightweight network protocols like HTTP REST or gRPC. A key benefit of microservices is that each service can be deployed, scaled, and updated independently without rebuilding the entire system.
+
+Section 2: Database Storage Strategies
+Different microservices often require different types of databases. For transactional operations like user accounts and orders, a relational database such as PostgreSQL is preferred because it guarantees ACID properties. For ephemeral data, session management, or rapid key-value caching, Redis provides sub-millisecond read times by storing data directly in RAM. Analytics and historical telemetry data are typically streamed into data warehouses.
+
+Section 3: Container Orchestration and Delivery
+Applications are packaged into standard Docker containers containing the binary and its runtime dependencies. To manage hundreds of container instances in production, teams use Kubernetes. Kubernetes handles automatic scaling, container health monitoring, rollout updates, and internal service discovery. CI/CD pipelines automate testing and building container images on every code commit to Git.
