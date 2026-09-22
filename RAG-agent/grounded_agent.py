@@ -86,15 +86,36 @@ def run_grounded_agent(user_query: str, max_turns: int = 3) -> CitedResponse:
             break
 
     print("\n[Phase 2] Synthesizing grounded structured response...")
+
+    gathered_context = []
+    for m in messages:
+        if isinstance(m, dict) and m.get("role") == "tool":
+            gathered_context.append(m.get("content", ""))
+
+    context_str = "\n\n".join(gathered_context) if gathered_context else "No documentation was retrieved."
+
     synthesis_messages = [
-        {"role": "system", "content": SYNTHESIS_SYSTEM_PROMPT + "\n\nRespond with a valid JSON object matching this schema:\n" + json.dumps(CitedResponse.model_json_schema(), indent=2)},
-        {"role": "user", "content": f"User query: '{user_query}'. Synthesize the final answer based only on retrieved chunks, returning JSON."}
+        {
+            "role": "system",
+            "content": (
+                SYNTHESIS_SYSTEM_PROMPT
+                + "\n\nYou must respond ONLY with a valid JSON object matching this schema:\n"
+                + json.dumps(CitedResponse.model_json_schema(), indent=2)
+            ),
+        },
+        {
+            "role": "user",
+            "content": (
+                f"User Query: {user_query}\n\n"
+                f"Retrieved Context:\n{context_str}\n\n"
+                "Synthesize the final answer and return the JSON object."
+            ),
+        },
     ]
-    full_history = messages + synthesis_messages
 
     synth_response = client.chat.completions.create(
         model=MODEL_NAME,
-        messages=full_history,
+        messages=synthesis_messages,
         response_format={"type": "json_object"}
     )
 
