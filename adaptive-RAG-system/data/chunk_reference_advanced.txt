@@ -1,0 +1,50 @@
+ID: langgraph_checkpointing.md_257c65
+Metadata: {'Header 1': 'LangGraph Checkpointing and Persistence', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_checkpointing.md', 'chunk_id': 'langgraph_checkpointing.md_257c65'}
+Content Snippet: Stateful applications require memory. LangGraph handles this via Checkpointers, which save the state...
+--------------------------------------------------
+ID: langgraph_checkpointing.md_3d9551
+Metadata: {'Header 1': 'LangGraph Checkpointing and Persistence', 'Header 2': 'MemorySaver', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_checkpointing.md', 'chunk_id': 'langgraph_checkpointing.md_3d9551'}
+Content Snippet: For local or testing environments, LangGraph provides `MemorySaver`, an in-memory checkpointer.
+To u...
+--------------------------------------------------
+ID: langgraph_checkpointing.md_74f0ba
+Metadata: {'Header 1': 'LangGraph Checkpointing and Persistence', 'Header 2': 'Threads', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_checkpointing.md', 'chunk_id': 'langgraph_checkpointing.md_74f0ba'}
+Content Snippet: Checkpointers organize state by threads. A thread represents a single continuous conversation or exe...
+--------------------------------------------------
+ID: langgraph_checkpointing.md_abc776
+Metadata: {'Header 1': 'LangGraph Checkpointing and Persistence', 'Header 2': 'Resuming and Human-in-the-Loop', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_checkpointing.md', 'chunk_id': 'langgraph_checkpointing.md_abc776'}
+Content Snippet: Because state is persisted per thread, you can pause execution, ask for human input, and resume exac...
+--------------------------------------------------
+ID: langgraph_core.md_3e3e1f
+Metadata: {'Header 1': 'LangGraph Core Concepts', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_core.md', 'chunk_id': 'langgraph_core.md_3e3e1f'}
+Content Snippet: LangGraph is a library for building stateful, multi-actor applications with LLMs, built on top of La...
+--------------------------------------------------
+ID: langgraph_core.md_b58990
+Metadata: {'Header 1': 'LangGraph Core Concepts', 'Header 2': 'StateGraph', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_core.md', 'chunk_id': 'langgraph_core.md_b58990'}
+Content Snippet: The core abstraction in LangGraph is the `StateGraph`. A StateGraph is parameterized by a state sche...
+--------------------------------------------------
+ID: langgraph_core.md_901e29
+Metadata: {'Header 1': 'LangGraph Core Concepts', 'Header 2': 'Nodes', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_core.md', 'chunk_id': 'langgraph_core.md_901e29'}
+Content Snippet: Nodes are the building blocks of a LangGraph. They can be Python functions or runnables. Every node ...
+--------------------------------------------------
+ID: langgraph_core.md_189a1e
+Metadata: {'Header 1': 'LangGraph Core Concepts', 'Header 2': 'Edges', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_core.md', 'chunk_id': 'langgraph_core.md_189a1e'}
+Content Snippet: Edges define the flow of execution between nodes.
+- **Normal Edges:** Connect one node to another di...
+--------------------------------------------------
+ID: langgraph_multi_agent.md_0b5f0e
+Metadata: {'Header 1': 'Multi-Agent Architectures in LangGraph', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_multi_agent.md', 'chunk_id': 'langgraph_multi_agent.md_0b5f0e'}
+Content Snippet: LangGraph excels at orchestrating multiple specialized agents....
+--------------------------------------------------
+ID: langgraph_multi_agent.md_4920e0
+Metadata: {'Header 1': 'Multi-Agent Architectures in LangGraph', 'Header 2': 'The Supervisor Pattern', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_multi_agent.md', 'chunk_id': 'langgraph_multi_agent.md_4920e0'}
+Content Snippet: In a supervisor architecture, a single routing agent (the supervisor) delegates tasks to worker agen...
+--------------------------------------------------
+ID: langgraph_multi_agent.md_3c6280
+Metadata: {'Header 1': 'Multi-Agent Architectures in LangGraph', 'Header 2': 'State Reducers', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_multi_agent.md', 'chunk_id': 'langgraph_multi_agent.md_3c6280'}
+Content Snippet: When multiple agents update the state, you must define how updates are merged. In LangGraph state sc...
+--------------------------------------------------
+ID: langgraph_multi_agent.md_5a424b
+Metadata: {'Header 1': 'Multi-Agent Architectures in LangGraph', 'Header 2': 'Routing Logic', 'source': 'd:\\3\\3.2\\Agentic_AI_Projects_AI_Engineering\\adaptive-RAG-system\\data\\langgraph_multi_agent.md', 'chunk_id': 'langgraph_multi_agent.md_5a424b'}
+Content Snippet: The supervisor LLM is prompted to respond with the name of the next worker or "FINISH". This output ...
+--------------------------------------------------

@@ -1,0 +1,22 @@
+[
+  {
+    "query": "What is the core abstraction in LangGraph?",
+    "expected_chunk_ids": ["langgraph_core.md_b58990"]
+  },
+  {
+    "query": "How do I configure a conditional edge to route execution dynamically?",
+    "expected_chunk_ids": ["langgraph_core.md_189a1e"]
+  },
+  {
+    "query": "Which checkpointer should I use for local or testing environments?",
+    "expected_chunk_ids": ["langgraph_checkpointing.md_3d9551"]
+  },
+  {
+    "query": "How do I pause execution and resume exactly where the graph left off using a specific thread_id?",
+    "expected_chunk_ids": ["langgraph_checkpointing.md_abc776"]
+  },
+  {
+    "query": "What reducer should I use to append messages rather than overwrite them?",
+    "expected_chunk_ids": ["langgraph_multi_agent.md_3c6280"]
+  }
+]
